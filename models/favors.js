@@ -8,4 +8,4 @@ const favorSchema = new Schema({
     favorDate: String
 });
 
-mongoose.model('favor', favorSchema);
+mongoose.model('favors', favorSchema);
