@@ -1,27 +1,20 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Router } from 'react-router-dom';
+
+const Landing = () => <h2>Landing</h2>;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <a href="auth/google">Login with Google</a>
-      </header>
+    <div>
+      <BrowserRouter>
+        <div>
+          <Route exact path="/" component={Landing} />
+          <Route exact path="/dashboard" component={Dashboard} />
+        </div>
+      </BrowserRouter>
     </div>
   );
 }
-
 export default App;
