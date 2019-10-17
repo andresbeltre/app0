@@ -18,9 +18,9 @@ class Header extends Component {
       <div className="row">
         <div className="col-md-12">
           <nav className="navbar navbar-light bg-light">
-            <a className="navbar-brand" href="#">
+            <a className="navbar-brand" href="/">
               <img
-                src="/docs/4.0/assets/brand/bootstrap-solid.svg"
+                src={process.env.PUBLIC_URL + '/clippy.jpeg'}
                 width="30"
                 height="30"
                 class="d-inline-block align-top"
