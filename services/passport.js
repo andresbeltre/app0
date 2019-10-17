@@ -3,7 +3,10 @@ const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const keys = require("../config/keys");
 const mongoose = require("mongoose");
 
-mongoose.connect(keys.mongoURI);
+mongoose.connect(keys.mongoURI, {
+  useUnifiedTopology: true,
+  useNewUrlParser: true
+});
 const User = mongoose.model("users");
 
 passport.serializeUser(function(user, done) {

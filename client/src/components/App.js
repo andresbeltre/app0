@@ -1,24 +1,32 @@
-import React, { Component } from 'react';
-//import { BrowserRouter, Route } from 'react-router-dom';
-import { connect } from 'react-redux';
-import * as actions from '../actions';
+//This file is responsible for all the initial view layer
+
+import React, { Component } from "react";
+import { BrowserRouter, Route } from "react-router-dom";
+import { connect } from "react-redux";
+import * as actions from "../actions";
+
+import Header from "./Header";
+import Landing from "./Landing";
 
 class App extends Component {
-    componentDidMount() {
-        this.props.fetchUser();
-    }
-    render() {
-        return (
-            <div className="container">
-                Hello, World!
-                {/* <BrowserRouter>
-                    <div>
-                        <Route exact path="/" component={Landing} />
-                    </div>
-                </BrowserRouter> */}
-            </div>
-        );
-    }
-};
+  componentDidMount() {
+    this.props.fetchUser();
+  }
+  render() {
+    return (
+      <div className="container">
+        <BrowserRouter>
+          <div>
+            <Header />
+            <Route exact path="/" component={Landing} />
+          </div>
+        </BrowserRouter>
+      </div>
+    );
+  }
+}
 
-export default connect(null, actions)(App);
+export default connect(
+  null,
+  actions
+)(App);
