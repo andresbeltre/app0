@@ -14,3 +14,9 @@ class Dashboard extends Component {
         );
     }
 };
+
+function mapStateToProps({ auth }) {
+  return { auth };
+}
+
+export default connect(mapStateToProps)(Dashboard);

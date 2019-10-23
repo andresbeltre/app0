@@ -12,9 +12,8 @@ class Header extends Component {
         return <a href="/api/logout">Log Out</a>;
     }
   }
-
+  
   render() {
-    console.log(this.props);
     return (
       <div className="col-md-12">
         <nav className="navbar navbar-light bg-light">
