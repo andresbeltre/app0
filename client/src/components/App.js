@@ -20,7 +20,7 @@ class App extends Component {
           <div className="row">
             <Header />
             <Route exact path="/" component={Landing} />
-            <Route exact path="/dashboard" component={Dashboard} />
+            <Route exact path="/dashboard" component={Dashboard} props={this.props}/>
           </div>
         </BrowserRouter>
       </div>
