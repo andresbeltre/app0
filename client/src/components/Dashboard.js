@@ -5,8 +5,10 @@ class Dashboard extends Component {
   render() {
     return (
       <div id="dashboard" className="row">
-        <div className="col-md-2">Hello, world!</div>
-        <div className="col-md-10 mainDashboardContent">
+        <div className="col-md-4">
+          <h1>Hello, World!</h1>
+        </div>
+        <div className="col-md-8">
           <h1>{this.props.user.firstName}</h1>
         </div>
       </div>

@@ -16,13 +16,20 @@ class App extends Component {
   render() {
     return (
       <div className="container-fluid">
-        <BrowserRouter>
-          <div className="row">
-            <Header />
-            <Route exact path="/" component={Landing} />
-            <Route exact path="/dashboard" component={Dashboard} props={this.props}/>
+        <div className="row">
+          <div className="col-md-12 col-lg-12">
+            <BrowserRouter>
+              <Header />
+              <Route exact path="/" component={Landing} />
+              <Route
+                exact
+                path="/dashboard"
+                component={Dashboard}
+                props={this.props}
+              />
+            </BrowserRouter>
           </div>
-        </BrowserRouter>
+        </div>
       </div>
     );
   }
