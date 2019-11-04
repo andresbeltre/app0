@@ -38,8 +38,8 @@ class Header extends Component {
               className="navbar-toggler"
               type="button"
               data-toggle="collapse"
-              data-target="#navbarNavAltMarkup"
-              aria-controls="navbarNavAltMarkup"
+              data-target="#hamBurgerMenu"
+              aria-controls="hamBurgerMenu"
               aria-expanded="false"
               aria-label="Toggle navigation"
             >
@@ -47,7 +47,7 @@ class Header extends Component {
             </button>
             <div
               className="collapse navbar-collapse justify-content-between"
-              id="navbarNav"
+              id="hamBurgerMenu"
             >
               {this.props.auth ? (
                 <ul className="navbar-nav">
