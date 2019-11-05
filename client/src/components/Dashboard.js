@@ -1,57 +1,19 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-//import { set } from "mongoose";
 
 import Favor from "./../Modals/Favor";
 
 class Dashboard extends Component {
   constructor(props) {
     super(props);
-    this.state = { favorModal: false };
+    this.state = { favorModalShow: false };
     this.favorModalStateChange = this.favorModalStateChange.bind(this);
-    this.renderFavorModal = this.renderFavorModal.bind(this);
   }
 
   favorModalStateChange() {
     return this.setState({
-      favorModal: !this.state.favorModal
+      favorModalShow: !this.state.favorModalShow
     });
-  }
-
-  renderFavorModal() {
-    return (
-      <div
-        className="modal fade"
-        id="myModal"
-        aria-labelledby="myModal"
-        role="dialog"
-      >
-        <div className="modal-dialog" role="document">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h5 className="modal-title">Add Favor</h5>
-              <button type="button" className="close" data-dismiss="modal">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <Favor />
-            <div className="modal-footer">
-              <button
-                type="button"
-                className="btn btn-secondary"
-                data-dismiss="modal"
-                onClick={this.favorModalStateChange}
-              >
-                Cancel
-              </button>
-              <button type="button" className="btn btn-secondary">
-                Add Favor to Tab
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
   }
 
   render() {
@@ -69,8 +31,7 @@ class Dashboard extends Component {
             >
               Add Favor
             </button>
-            {console.log("Favor Modal State:", this.state.favorModal)}
-            {this.renderFavorModal()}
+            <Favor toggleModal={this.favorModalStateChange} />
           </div>
         </div>
       </div>
