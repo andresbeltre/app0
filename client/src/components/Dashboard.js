@@ -31,6 +31,7 @@ class Dashboard extends Component {
             >
               Add Favor
             </button>
+            {console.log("Favor Modal State:", this.state.favorModalShow)}
             <Favor toggleModal={this.favorModalStateChange} />
           </div>
         </div>
