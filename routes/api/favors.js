@@ -1,22 +1,18 @@
-const mongoose = require("mongoose");
-
 //Favor Model
+const mongoose = require("mongoose");
 const Favor = mongoose.model("favors");
 
-// @route   GET
-// @desc    Get all items
-// @access  Public
 module.exports = app => {
+  // @route   GET api/favors
+  // @desc    Get all items
+  // @access  Public
   app.get("/api/favors", (req, res) => {
     Favor.find().then(favors => res.json(favors));
   });
-};
 
-// @route   Post
-// @desc    Create all item
-// @access  Public
-// TESTING API --> NEEDS REFACTORING
-module.exports = app => {
+  // @route   Post
+  // @desc    Create all item
+  // @access  Public
   app.post("/api/favors", (req, res) => {
     const newFavor = new Favor({
       favorName: req.body.favorName,

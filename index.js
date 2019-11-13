@@ -1,11 +1,12 @@
 const express = require("express");
-const path = require("path");
+//const path = require("path");
 const cookieSession = require("cookie-session");
 const passport = require("passport");
 const keys = require("./config/keys");
 const bodyParser = require("body-parser");
 require("./models/users");
 require("./models/favors");
+
 require("./services/passport");
 
 const app = express();
