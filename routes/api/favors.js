@@ -22,3 +22,6 @@ module.exports = app => {
     newFavor.save().then(favor => res.json(favor));
   });
 };
+
+// Favor.find().then(favors => res.status(200).json(favors)).catch(error => res.status(500).json(error))
+// use this to check in react if request was good or not

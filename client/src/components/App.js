@@ -9,9 +9,11 @@ import Landing from "./Landing";
 import Dashboard from "./Dashboard";
 
 class App extends Component {
-  componentDidMount() {
-    this.props.fetchUser();
+  async componentDidMount() {
+    await this.props.fetchUser();
+    await this.props.fetchFavors();
   }
+
   render() {
     return (
       <div className="container-fluid">
@@ -34,4 +36,15 @@ class App extends Component {
   }
 }
 
-export default connect(null, actions)(App);
+const mapStateToProps = state => {
+  return {
+    favors: state.favors,
+    user: state.user
+  };
+};
+
+// ANYWHERE THAT I PUT MAP STATE TO PROS I WILL HAVE ACCESS TO THE SPECIFIED STATE VALUES IN MY PROPS.
+// THE APP COMPONENT HAS ACCESS TO THE FAVORS AND USER STATE IN THE PROPS BECAUSE IT HAS MAPSTATETOPROPS
+// TO MAKE THIS WORK YOU NEED TO EXPORT YOUR COMPONENT IN THE CONNECT WRAPPER AS SEEN BELOW.
+
+export default connect(mapStateToProps, actions)(App);
