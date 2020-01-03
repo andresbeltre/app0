@@ -4,7 +4,8 @@ const { Schema } = mongoose;
 
 const favorSchema = new Schema({
   favorName: String,
-  favorDescription: String
+  favorDescription: String,
+  favorDate: String
 });
 
 mongoose.model("favors", favorSchema);

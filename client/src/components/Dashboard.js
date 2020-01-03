@@ -3,7 +3,6 @@ import { ListGroup, ListGroupItem } from "reactstrap";
 import { connect } from "react-redux";
 
 import Favor from "./Modals/Favor";
-import { fetchFavors } from "../actions";
 
 class Dashboard extends Component {
   constructor(props) {
@@ -23,7 +22,7 @@ class Dashboard extends Component {
   };
 
   render() {
-    const { favor } = this.props;
+    const { favors } = this.props.favors;
 
     return (
       <div className="row">
@@ -43,12 +42,24 @@ class Dashboard extends Component {
             >
               Add Favor
             </button>
-            {
-              //console.log("Favor Modal State:", this.state.favorModalShow)
-            }
             <Favor toggleModal={this.favorModalStateChange} />
           </div>
-          <div>{JSON.stringify(this.props.favors)}</div>
+        </div>
+        <div className="col-md-6 col-lg-6">
+          <ListGroup>
+            {favors.map(({ _id, favorName, favorDescription, favorDate }) => (
+              <ListGroupItem key={_id}>
+                <h2>{favorName}</h2>
+                <hr />
+                <p>
+                  <em>{favorDescription}</em>
+                </p>
+                <p>
+                  <b>{favorDate}</b>
+                </p>
+              </ListGroupItem>
+            ))}
+          </ListGroup>
         </div>
       </div>
     );

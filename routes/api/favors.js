@@ -16,7 +16,8 @@ module.exports = app => {
   app.post("/api/favors", (req, res) => {
     const newFavor = new Favor({
       favorName: req.body.favorName,
-      favorDescription: req.body.favorDescription
+      favorDescription: req.body.favorDescription,
+      favorDate: req.body.favorDate
     });
 
     newFavor.save().then(favor => res.json(favor));
