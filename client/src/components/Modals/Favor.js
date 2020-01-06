@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
+import AddFavor from "../Forms/AddFavor";
 
 const modalRoot = document.getElementById("portal-modal");
 
@@ -36,7 +37,9 @@ class portalModal extends Component {
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div className="modal-body">FIELDS GO HERE</div>
+            <div className="modal-body">
+              <AddFavor />
+            </div>
             <div className="modal-footer">
               <button
                 type="button"

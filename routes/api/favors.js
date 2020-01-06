@@ -22,6 +22,11 @@ module.exports = app => {
 
     newFavor.save().then(favor => res.json(favor));
   });
+
+  // @route   Delete
+  // @desc    Delete a Favor by ID
+  // @access  Public
+  // TODO DELETE METHOD
 };
 
 // Favor.find().then(favors => res.status(200).json(favors)).catch(error => res.status(500).json(error))

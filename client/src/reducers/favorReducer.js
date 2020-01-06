@@ -1,4 +1,4 @@
-import { FETCH_FAVORS, LOADING_DATA } from "../actions/types";
+import { FETCH_FAVORS, LOADING_DATA, ADD_FAVOR } from "../actions/types";
 
 const initialState = {
   favors: [],
@@ -8,6 +8,11 @@ const initialState = {
 export default function(state = {}, action) {
   switch (action.type) {
     case FETCH_FAVORS:
+      return {
+        favors: action.payload,
+        loading: false
+      };
+    case ADD_FAVOR:
       return {
         favors: action.payload,
         loading: false
